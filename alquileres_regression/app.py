@@ -32,6 +32,9 @@ model = pickle.load(open('alquileres.pkl', 'rb'))
 def home():
     return render_template('index.html')
 
+
+# Cuando se presione el botón el sistema llama a esta función
+# para realizar la predicción con el modelo de inteligencia artificial
 @app.route('/predict',methods=['POST'])
 def predict():
     try:

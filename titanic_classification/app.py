@@ -54,15 +54,15 @@ def predict():
         prediction = model.predict(numpy_features)
 
         if prediction[0] == 1:
-            #image = url_for('static', filename='media/titanic_survivors.jpg')
-            #return render_template('index.html', prediction_text='Sobreviviste!', prediction_image=image)
-            return render_template('index.html', prediction_text='Sobreviviste!')
+            image = url_for('static', filename='media/titanic_survivors.jpg')
+            return render_template('index.html', prediction_text='Sobreviviste!', prediction_image=image)
         else:
-            return render_template('index.html', prediction_text='Game Over!')
+            image = url_for('static', filename='media/new_life.jpg')
+            return render_template('index.html', prediction_text='Game Over!', prediction_image=image)
         
     except Exception as e:
         print(e)
         return render_template('index.html', prediction_text='Datos mal ingresados')
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5005)
+    app.run(debug=True)

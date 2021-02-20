@@ -104,4 +104,4 @@ def predict():
         return render_template('index.html', overview_graph=encoded_img, prediction_text='Datos mal ingresados')
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    app.run(debug=True)
